@@ -1,0 +1,25 @@
+
+.image-container {
+
+  overflow: hidden; /* Hide any overflow */
+}
+
+.card-img-top{
+  object-fit: cover; /* Scale the image to cover the container */
+  height: 200px; /* Set the desired height */
+}
+.dark-theme {
+  background-color: #232323;
+  color: #fff;
+}
+.light-theme {
+  background-color: #fff;
+  color: #333;
+}
+button.clicked {
+  background-color: green;
+  color: white;
+}
+.flex-btns {
+  flex-wrap: wrap;
+}

@@ -1,0 +1,27 @@
+
+.navbar-brand{
+  color: white;
+}
+button.no-outline:focus {
+  border: none !important;
+}
+.btn, input{
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.input-group-text {
+  background-color: #101010;
+  color: #fff;
+}
+.dark-theme {
+  background-color: #171717;
+  color: #fff;
+}
+.light-theme {
+  background-color: #fff;
+  color: #333;
+}
+.dark-theme .fa-moon {
+  color: white;
+}

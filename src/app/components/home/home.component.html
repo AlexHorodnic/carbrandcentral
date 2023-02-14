@@ -1,0 +1,43 @@
+<div class="container" [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}">
+  <div class="row">
+    <section class="d-flex justify-content-center flex-btns">
+      <button mat-raised-button color="primary" class="m-2" [class.clicked]="allCarMakes === selectedCar" (click)="shuffledCars()">{{allCarMakes}}</button>
+      <div *ngFor="let specificCarMake of carMakes">
+        <button mat-raised-button color="primary" class="m-2" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">{{ specificCarMake }}</button>
+      </div>
+    </section>
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" *ngFor="let car of shuffledCarsArray | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage" style="padding: 10px">
+      <div class="card" style="background-color: #181818; color: white">
+        <img src="{{car.imgUrl}}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{car.make}} {{car.model}}</h5>
+          <p class="card-text">{{car.year}}</p>
+          <p>Body Type: {{car.bodyType}}</p>
+          <p>Mileage: {{car.mileage}} Km</p>
+          <a href="#!" class="btn btn-primary float-start" style="background-color: white; border: 0; color: black">View More</a>
+          <a class="btn btn-primary float-end" style="background-color: #66a600; border: 0;">{{car.price.toLocaleString()}} $</a>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="shuffledCarsArray.length > itemsPerPage">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item" [class.disabled]="currentPage == 1">
+            <a class="page-link" href="javascript:void(0)" (click)="currentPage = 1">First</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage == 1">
+            <a class="page-link" href="javascript:void(0)" (click)="currentPage = currentPage - 1">Previous</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage == totalPages">
+            <a class="page-link" href="javascript:void(0)" (click)="currentPage = currentPage + 1">Next</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage == totalPages">
+            <a class="page-link" href="javascript:void(0)" (click)="currentPage = totalPages">Last</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
