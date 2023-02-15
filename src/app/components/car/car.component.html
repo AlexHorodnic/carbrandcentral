@@ -1,1 +1,23 @@
-<p>car works!</p>
+<div class="container" style="height: 800px; color: white">
+  <div class="row" style="margin-top: 70px; margin-bottom: 70px;">
+    <div class="col-8">
+      <img src="{{carData.imgUrl}}"  style="object-fit: cover; width: 800px; height: 500px"/>
+    </div>
+    <div class="col-4">
+      <div>{{carData.make}} {{carData.model}}</div>
+      <div>Year: {{carData.year}}</div>
+      <div>Body: {{carData.bodyType}}</div>
+      <div>Exterior Color: {{carData.exteriorColor}}</div>
+      <div>Interior Color: {{carData.interiorColor}}</div>
+      <div>Mileage: {{carData.mileage}} km</div>
+      <div>Doors: {{carData.doors}}</div>
+      <div>Height: {{carData.height}} cm</div>
+      <div>Weight: {{carData.weight}} kg</div>
+      <div>Engine: {{carData.engine}}</div>
+      <div>Rim Size: {{carData.rimSize}}"</div>
+      <div>Fuel Economy: {{carData.fuelEconomy}} km/L</div>
+      <button mat-raised-button><div>Price: {{carData.price.toLocaleString()}} $</div></button>
+      <button mat-raised-button><i class="fa-regular fa-location-dot"></i> <a href="https://www.google.com/maps/search/{{carData.make}}+dealers/" target="_blank">Find {{carData.make}} dealers</a></button>
+    </div>
+  </div>
+</div>
