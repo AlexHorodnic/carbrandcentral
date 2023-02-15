@@ -1,25 +1,26 @@
 <div [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}">
   <nav class="navbar">
-    <div class="container-fluid d-flex flex-row">
-      <a class="navbar-brand float-start">Car Brand Central</a>
-
-      <form class="d-flex input-group w-auto">
-        <input
-          type="search"
-          class="form-control rounded"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="search-addon"
-        />
-        <span class="input-group-text border-0" id="search-addon">
+    <div class="container d-flex">
+      <a class="navbar-brand">Car Brand Central</a>
+      <div class="d-flex">
+        <form class="input-group w-auto">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <span class="input-group-text border-0" id="search-addon">
           <i class="fas fa-search"></i>
         </span>
-      </form>
-      <button class="btn no-outline float-end" (click)="switchTheme()">
-        <i class="fas fa-moon no-outline"
-           [ngClass]="{'fa-moon': theme === 'dark', 'fa-circle': theme === 'light'}"
-        ></i>
-      </button>
+        </form>
+        <button class="btn no-outline" (click)="switchTheme()" style="padding-left: 20px">
+          <i class="fas fa-moon no-outline"
+             [ngClass]="{'fa-moon': theme === 'dark', 'fa-circle': theme === 'light'}"
+          ></i>
+        </button>
+      </div>
     </div>
   </nav>
 </div>
