@@ -1,25 +1,25 @@
-
 .image-container {
-
-  overflow: hidden; /* Hide any overflow */
+  overflow: hidden;
 }
-
 .card-img-top{
-  object-fit: cover; /* Scale the image to cover the container */
-  height: 200px; /* Set the desired height */
+  object-fit: cover;
+  height: 200px;
 }
 .dark-theme {
-  background-color: #232323;
+  background-color: #212121;
   color: #fff;
 }
 .light-theme {
   background-color: #fff;
   color: #333;
 }
-button.clicked {
-  background-color: green;
+
+.carMakeBtn.clicked {
+  background: linear-gradient(50deg, #3a3a3a, #606060, #3a3a3a);
   color: white;
 }
 .flex-btns {
   flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
