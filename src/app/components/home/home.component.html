@@ -1,10 +1,10 @@
-<div class="container" [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}">
+<div class="container" [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}" >
   <div class="row">
     <section class="d-flex justify-content-center flex-btns">
       <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="allCarMakes === selectedCar" (click)="shuffledCars()">{{allCarMakes}}</button>
       <div *ngFor="let specificCarMake of carMakes">
         <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">
-          <img [src]="'https://www.carlogos.org/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'" style="width: 40px">
+          <img [src]="'assets/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'" style="width: 40px">
           {{ specificCarMake }}
         </button>
       </div>
