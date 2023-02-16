@@ -14,9 +14,12 @@
   background-color: #fff;
   color: #333;
 }
-
+button.carMakeBtn{
+  background-color: #414141;
+  color: white;
+}
 .carMakeBtn.clicked {
-  background: linear-gradient(50deg, #3a3a3a, #606060, #3a3a3a);
+  border: 2px solid #888888;
   color: white;
 }
 .flex-btns {
@@ -33,4 +36,10 @@
 .card{
   background-color: #181818;
   color: white;
+}
+ul li a{
+  background-color: #414141;
+  text-decoration: none;
+  color: white;
+  border: none;
 }
