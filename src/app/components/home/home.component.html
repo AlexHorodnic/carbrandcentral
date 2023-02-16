@@ -17,7 +17,7 @@
           <p class="card-text">{{car.year}}</p>
           <p>Body Type: {{car.bodyType}}</p>
           <p>Mileage: {{car.mileage}} Km</p>
-          <a [routerLink]="[car.id]" class="btn btn-primary float-start" style="background-color: #3a3a3a; border: 0; color: white">View More</a>
+          <a [routerLink]="[car.id]" class="btn btn-primary float-start view-more-btn">View More</a>
           <a class="btn btn-primary float-end" style="background: linear-gradient(50deg, #3a3a3a, #606060, #3a3a3a); border: 0;">{{car.price.toLocaleString()}} $</a>
         </div>
       </div>
