@@ -1,4 +1,6 @@
-
+.container{
+  padding-bottom: 50px;
+}
 .image-container {
   overflow: hidden;
 }
@@ -24,8 +26,8 @@ button.carMakeBtn{
 }
 .flex-btns {
   flex-wrap: wrap;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 .car-logo{
   width: 40px;

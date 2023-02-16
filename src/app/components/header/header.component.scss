@@ -24,3 +24,8 @@ button.no-outline:focus {
 .dark-theme .fa-moon {
   color: white;
 }
+@media (max-width: 482px) {
+  .car-logo{
+    font-size: 15px;
+  }
+}
