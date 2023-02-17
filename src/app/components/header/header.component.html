@@ -1,7 +1,8 @@
 <div [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}" class="header">
   <nav class="navbar">
     <div class="container d-flex">
-      <img src="assets/cbc_logo.png" class="img-fluid logo" routerLink="" width="100px">
+      <img src="assets/cbc_logo.png" class="img-fluid  logo logo-white" routerLink="" width="100px">
+      <img src="assets/cbc_logo_black.png" class="img-fluid logo logo-black" routerLink="" width="100px">
       <div class="d-flex">
         <form class="input-group w-auto" style="color: white">
           <input
@@ -10,12 +11,11 @@
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
-            style="background-color: #282828; color: white; padding-left: 15px; "
           />
-          <span class="input-group-text border-0" id="search-addon" style="background-color: #171717; ">
-          <i class="fas fa-search"></i>
-        </span>
         </form>
+        <button class="btn no-outline">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
         <button class="btn no-outline" (click)="switchTheme()">
           <i class="fas fa-moon no-outline"
              [ngClass]="{'fa-moon': theme === 'dark', 'fa-circle': theme === 'light'}"
