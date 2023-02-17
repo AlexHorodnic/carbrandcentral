@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnChanges {
   carMakes = ['Audi', 'Bmw', 'Honda', 'Nissan', 'Volkswagen', 'Bentley', 'Subaru', 'Volvo', 'Ford', 'Toyota', 'Mercedes']
   theme = 'dark';
   shuffledCarsArray: Car[] = [];
-  itemsPerPage = 8;
+  itemsPerPage = 12;
   currentPage = 1;
   totalPages = 0;
   selectedCar: string = 'All';
@@ -39,7 +39,9 @@ export class HomeComponent implements OnInit, OnChanges {
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: any) {
     const screenWidth = event.target.innerWidth;
-    if (screenWidth >= 1200) {
+    if (screenWidth >=2560) {
+      this.itemsPerPage = 12;
+    } else if (screenWidth >= 1200){
       this.itemsPerPage = 8;
     } else if (screenWidth >= 992) {
       this.itemsPerPage = 6;

@@ -50,3 +50,20 @@ ul li a{
   border: 0;
   color: white;
 }
+@media (min-width: 2560px ) {
+  .container{
+    max-width:2000px;;
+    width: 2000px;
+  }
+}
+@media (min-width: 2560px) {
+  .card-col {
+    width: 16.66667%; /* col-xxl-2 */
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 2559px) {
+  .card-col {
+    width: 25%; /* col-xl-3 */
+  }
+}
