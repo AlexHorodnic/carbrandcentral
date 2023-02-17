@@ -1,7 +1,7 @@
 <div [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}" class="header">
   <nav class="navbar">
     <div class="container d-flex">
-      <a class="navbar-brand car-logo" routerLink="">Car Brand Central</a>
+      <img src="assets/cbc_logo.png" class="img-fluid logo" routerLink="" width="100px">
       <div class="d-flex">
         <form class="input-group w-auto" style="color: white">
           <input
@@ -16,7 +16,7 @@
           <i class="fas fa-search"></i>
         </span>
         </form>
-        <button class="btn no-outline" (click)="switchTheme()" style="padding-left: 20px">
+        <button class="btn no-outline" (click)="switchTheme()">
           <i class="fas fa-moon no-outline"
              [ngClass]="{'fa-moon': theme === 'dark', 'fa-circle': theme === 'light'}"
           ></i>
