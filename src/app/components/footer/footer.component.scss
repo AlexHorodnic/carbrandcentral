@@ -1,6 +1,4 @@
-.icon-section i{
-  margin: 5px;
-}
+
 ul li{
   padding-top: 5px;
   font-size: 15px;
@@ -9,3 +7,36 @@ ul{
   padding: 0;
   margin: 0;
 }
+.spaced-link{
+  padding: 10px;
+}
+.social-section{
+  flex-direction: column;
+  justify-content: start;
+}
+.fa-brands{
+  padding-right: 16px;
+}
+@media (max-width: 767px) {
+  .spaced-link{
+    padding: 6px;
+  }
+  .flex-footer{
+    flex-direction: column;
+  }
+  .link-section{
+    flex-direction: row;
+  }
+  .social-section{
+    flex-direction: row;
+    align-items: center;
+  }
+  .fa-brands{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+.container{
+  padding: 50px;
+}
+

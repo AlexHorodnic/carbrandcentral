@@ -26,6 +26,7 @@ button.carMakeBtn{
 }
 .flex-btns {
   flex-wrap: wrap;
+  margin-top: 50px;
   padding-bottom: 30px;
   padding-top: 30px;
 }
@@ -66,4 +67,7 @@ ul li a{
   .card-col {
     width: 25%; /* col-xl-3 */
   }
+}
+.container{
+  min-height: calc(100vh - 170px);
 }
