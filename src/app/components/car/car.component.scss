@@ -5,3 +5,21 @@ button a{
 button{
   background-color: #12af00 !important;
 }
+.container{
+
+  justify-content: center;
+  align-items: center;
+
+}
+.flex-content{
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .container{
+    flex-direction: column;
+  }
+}
+
+.col{
+  padding: 0;
+}
