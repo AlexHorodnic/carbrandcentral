@@ -4,20 +4,20 @@
       <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="allCarMakes === selectedCar" (click)="shuffledCars()">{{allCarMakes}}</button>
       <div *ngFor="let specificCarMake of carMakes">
         <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">
-          <img class="car-logo" [src]="'assets/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'">
+          <img loading="lazy" class="car-logo" [src]="'assets/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'">
           {{ specificCarMake }}
         </button>
       </div>
     </section>
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 card-col" *ngFor="let car of shuffledCarsArray | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage">
       <div class="card">
-        <img src="{{car.imgUrl}}" class="card-img-top"  />
+        <img loading="lazy" src="{{car.imgUrl}}" class="card-img-top"  />
         <div class="card-body">
           <h5 class="card-title">{{car.make}} {{car.model}}</h5>
           <p class="card-text">{{car.year}}</p>
           <p>Body Type: {{car.bodyType}}</p>
           <p>Mileage: {{car.mileage}} Km</p>
-          <a [routerLink]="[car.id]" class="btn btn-primary float-start view-more-btn">View More</a>
+          <a [routerLink]="[car.make, car.id]" class="btn btn-primary float-start view-more-btn">View More</a>
           <a class="btn btn-primary float-end" style="background: linear-gradient(50deg, #3a3a3a, #606060, #3a3a3a); border: 0;">{{car.price.toLocaleString()}} $</a>
         </div>
       </div>

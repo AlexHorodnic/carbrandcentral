@@ -1,25 +1,25 @@
-button a{
-  text-decoration: none;
-  color: white;
+@media(min-width: 1200px) {
+  .flex-car-info{
+    width: 400px;
+  }
 }
-button{
-  background-color: #12af00 !important;
-}
-.container{
-
-  justify-content: center;
-  align-items: center;
-
-}
-.flex-content{
-  align-items: center;
-}
-@media (max-width: 1200px) {
+@media(max-width: 1200px) {
   .container{
     flex-direction: column;
   }
+  .flex-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-
-.col{
-  padding: 0;
+@media (min-width: 992px) and (max-width: 1200px) {
+  .flex-car-info{
+    width: 700px;
+  }
+}
+@media (max-width: 991px) {
+  .flex-car-info{
+    width: 100%
+  }
 }

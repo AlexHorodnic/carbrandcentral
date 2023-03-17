@@ -45,8 +45,24 @@ input{
   .logo{
     width: 70px;
   }
-
 }
+@media (max-width: 350px) {
+  .logo{
+    width: 60px;
+  }
+  .btn.no-outline{
+    padding: 10px;
+  }
+}
+@media (max-width: 335px) {
+  .logo{
+    width: 55px;
+  }
+  .btn.no-outline{
+    padding: 7px;
+  }
+}
+
 @media (max-width: 415px) {
   .input-group input{
     width: 170px;
