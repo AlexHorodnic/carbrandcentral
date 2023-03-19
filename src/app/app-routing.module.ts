@@ -4,8 +4,8 @@ import {HomeComponent} from "./components/home/home.component";
 import {CarComponent} from "./components/car/car.component";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent },
-  {path: ':make/:id', component: CarComponent }
+  { path: '', component: HomeComponent, data: { breadcrumb: 'Home' } },
+  { path: ':make/:id', component: CarComponent, data: { breadcrumb: 'Car' } }
 ];
 
 @NgModule({

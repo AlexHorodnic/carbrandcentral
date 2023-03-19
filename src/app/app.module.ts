@@ -11,13 +11,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    CarComponent
+    CarComponent,
+    BreadcrumbsComponent
   ],
     imports: [
         BrowserModule,

@@ -26,6 +26,7 @@ export class CarComponent {
   cars = [...Audi, ...Bmw, ...Honda, ...Nissan, ...Volkswagen, ...Bentley, ...Subaru, ...Volvo, ...Ford, ...Toyota, ...Mercedes];
   id: string | null;
   carData: any;
+
   constructor(private route: ActivatedRoute) {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log(this.id);
