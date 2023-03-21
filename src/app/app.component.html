@@ -1,6 +1,6 @@
 <div style="display: flex; flex-direction: column; height: 100%;" [ngClass]="{'dark-theme': themeService.theme === 'dark', 'light-theme': themeService.theme === 'light'}">
   <app-header></app-header>
-  <div style="flex-grow: 1;">
+  <div class="flex-grow" style="flex-grow: 1;">
     <div style="height: 100%; overflow-y: auto;">
       <router-outlet></router-outlet>
     </div>

@@ -1,9 +1,14 @@
 .dark-theme {
   background-color: #101010;
   color: #fff;
+  .flex-grow{
+    background-color: #101010;
+  }
 }
 .light-theme {
   background-color: white;
   color: #333;
-
+  .flex-grow{
+    background-color: white;
+  }
 }
