@@ -1,0 +1,22 @@
+.dark-theme {
+  background-color: #101010;
+  color: #fff;
+}
+.light-theme {
+  background-color: white;
+  color: black;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .breadcrumb-item::before{
+    color: black;
+  }
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.breadcrumb-item::before{
+  color: white;
+}

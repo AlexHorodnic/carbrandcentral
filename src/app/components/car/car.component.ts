@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   Audi,
   Bmw,
@@ -14,6 +14,8 @@ import {
   Car
 } from '../../cars/car';
 import {ActivatedRoute} from "@angular/router";
+import {ThemeService} from "../../shared/theme.service";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-car',
@@ -22,12 +24,13 @@ import {ActivatedRoute} from "@angular/router";
 })
 
 
-export class CarComponent {
+export class CarComponent implements OnInit{
   cars = [...Audi, ...Bmw, ...Honda, ...Nissan, ...Volkswagen, ...Bentley, ...Subaru, ...Volvo, ...Ford, ...Toyota, ...Mercedes];
   id: string | null;
   carData: any;
+  theme = 'dark';
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, public themeService: ThemeService, private cookieService: CookieService) {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log(this.id);
 
@@ -37,6 +40,9 @@ export class CarComponent {
         console.log(this.carData)
       }
     }
+
+  }
+  ngOnInit(){
 
   }
 }

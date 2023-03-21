@@ -1,3 +1,37 @@
+.container{
+  margin-top: 100px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.dark-theme {
+  background-color: #171717;
+  color: #fff;
+  .car-info-section{
+    background-color: #101010;
+    border-radius: 10px;
+  }
+  .find-dealer{
+    background-color: #171717;
+    color: white;
+    border: 1px solid white;
+  }
+}
+.light-theme {
+  background-color: #D7E9F7;
+  color: black;
+  .car-info-section{
+    background-color: white;
+    border-radius: 10px;
+  }
+  .flex-car-info{
+    background-color: white;
+  }
+  .find-dealer{
+    background-color: #D7E9F7;
+    border: 1px solid black;
+  }
+}
+
 @media(min-width: 1200px) {
   .flex-car-info{
     width: 400px;

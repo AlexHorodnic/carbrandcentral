@@ -1,0 +1,6 @@
+<ol class="breadcrumb" style="padding: 10px; border-radius: 10px" [ngClass]="{'dark-theme': themeService.theme === 'dark', 'light-theme': themeService.theme === 'light'}">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs;">
+    <div>{{ breadcrumb.label }}</div>
+  </li>
+</ol>
