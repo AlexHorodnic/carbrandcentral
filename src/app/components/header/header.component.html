@@ -1,4 +1,4 @@
-<div [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}" class="header">
+<div [ngClass]="{'dark-theme': themeService.theme === 'dark', 'light-theme': themeService.theme === 'light'}" class="header">
   <nav class="navbar">
     <div class="container d-flex">
       <img src="assets/cbc_logo.png" class="img-fluid  logo logo-white" routerLink="" width="100px">

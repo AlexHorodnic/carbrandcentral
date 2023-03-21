@@ -12,6 +12,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import {MatListModule} from "@angular/material/list";
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
         MatIconModule,
         MatToolbarModule,
         MatButtonModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        MatListModule
     ],
   providers: [],
   bootstrap: [AppComponent]

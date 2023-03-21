@@ -13,6 +13,8 @@ import {
   Volvo,
   Car
 } from '../../cars/car';
+import { ThemeService } from '../../shared/theme.service';
+import {CookieService} from "ngx-cookie-service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,6 +23,7 @@ import {
 
 
 export class HomeComponent implements OnInit, OnChanges {
+  constructor(public themeService: ThemeService, private cookieService: CookieService) {}
   cars = [...Audi, ...Bmw, ...Honda, ...Nissan, ...Volkswagen, ...Bentley, ...Subaru, ...Volvo, ...Ford, ...Toyota, ...Mercedes];
   carMakes = ['Audi', 'Bmw', 'Honda', 'Nissan', 'Volkswagen', 'Bentley', 'Subaru', 'Volvo', 'Ford', 'Toyota', 'Mercedes']
   theme = 'dark';
@@ -34,6 +37,16 @@ export class HomeComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.shuffledCarsArray = this.shuffledCars();
     this.totalPages = Math.ceil(this.shuffledCarsArray.length / this.itemsPerPage);
+
+    const btn = document.querySelector('.filter-btn');
+    const popup = document.querySelector('#popup') as HTMLElement;
+    if (btn !== null && popup !== null) {
+      // Add an event listener to the button
+      btn.addEventListener('click', () => {
+        // Display the pop-up
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+      });
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -53,6 +66,10 @@ export class HomeComponent implements OnInit, OnChanges {
   }
 
   shuffledCars(carMake?: string): Car[] {
+    const popup = document.querySelector('#popup') as HTMLElement;
+    if (popup !== null) {
+      popup.style.display = popup.style.display === 'none' ? 'none' : 'none';
+    }
     this.selectedCar = this.allCarMakes;
     let carsToShuffle = this.cars;
 
@@ -95,6 +112,10 @@ export class HomeComponent implements OnInit, OnChanges {
     this.shuffledCars(specificCarMake);
     this.totalPages = this.getTotalPages();
     this.selectedCar = specificCarMake;
+    const popup = document.querySelector('#popup') as HTMLElement;
+    if (popup !== null) {
+        popup.style.display = popup.style.display === 'none' ? 'none' : 'none';
+    }
   }
   getTotalPages(): number {
     return Math.ceil(this.shuffledCarsArray.length / this.itemsPerPage);

@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: #171717;  color: white">
+<div class="container-fluid" [ngClass]="{'dark-theme': themeService.theme === 'dark', 'light-theme': themeService.theme === 'light'}">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between flex-footer" >
       <div class="d-flex link-section">

@@ -2,6 +2,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-background-color: #212121
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.dark-theme {
+  body{
+    background-color: #212121;
+    color: #fff;
+  }
+}
+.light-theme {
+  body{
+    background-color: #fff;
+    color: #333;
+  }
 }

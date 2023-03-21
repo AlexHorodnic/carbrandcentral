@@ -1,46 +1,65 @@
-<div class="container" [ngClass]="{'dark-theme': theme === 'dark', 'light-theme': theme === 'light'}" >
-  <div class="row">
-    <section class="d-flex justify-content-center flex-btns">
-      <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="allCarMakes === selectedCar" (click)="shuffledCars()">{{allCarMakes}}</button>
-      <div *ngFor="let specificCarMake of carMakes">
-        <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">
-          <img loading="lazy" class="car-logo" [src]="'assets/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'">
-          {{ specificCarMake }}
-        </button>
+<div class="container-fluid" [ngClass]="{'dark-theme': themeService.theme === 'dark', 'light-theme': themeService.theme === 'light'}">
+  <div class="container" style="padding-top: 120px">
+    <div class="row">
+      <section class="d-flex justify-content-center flex-btns">
+        <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="allCarMakes === selectedCar" (click)="shuffledCars()">{{allCarMakes}}</button>
+        <div *ngFor="let specificCarMake of carMakes">
+          <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">
+            <img loading="lazy" class="car-logo" [src]="'assets/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'">
+            {{ specificCarMake }}
+          </button>
+        </div>
+      </section>
+      <button id="popup-btn" class="btn filter-btn d-flex justify-content-center align-items-center"><i class="fas fa-cogs"></i></button>
+      <div id="popup" style="color: black; padding-top: 70px">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="allCarMakes === selectedCar" (click)="shuffledCars()">{{allCarMakes}}</button>
+          </mat-list-item>
+        </mat-list>
+        <mat-list role="list" *ngFor="let specificCarMake of carMakes" style="font-size: 15px">
+          <mat-list-item role="listitem" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">
+            <button mat-raised-button class="m-2 carMakeBtn" [class.clicked]="specificCarMake === selectedCar" (click)="onFilterButtonClick(specificCarMake)">
+              <img loading="lazy" class="car-logo" [src]="'assets/car-logos/' + (specificCarMake.toLowerCase()) + '-logo.png'">
+              {{ specificCarMake }}
+            </button>
+          </mat-list-item>
+        </mat-list>
       </div>
-    </section>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 card-col" *ngFor="let car of shuffledCarsArray | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage">
-      <div class="card">
-        <img loading="lazy" src="{{car.imgUrl}}" class="card-img-top"  />
-        <div class="card-body">
-          <h5 class="card-title">{{car.make}} {{car.model}}</h5>
-          <p class="card-text">{{car.year}}</p>
-          <p>Body Type: {{car.bodyType}}</p>
-          <p>Mileage: {{car.mileage}} Km</p>
-          <a [routerLink]="[car.make, car.id]" class="btn btn-primary float-start view-more-btn">View More</a>
-          <a class="btn btn-primary float-end" style="background: linear-gradient(50deg, #3a3a3a, #606060, #3a3a3a); border: 0; cursor: initial">{{car.price.toLocaleString()}} $</a>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 card-col" *ngFor="let car of shuffledCarsArray | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage">
+        <div class="card">
+          <img loading="lazy" src="{{car.imgUrl}}" class="card-img-top"  />
+          <div class="card-body">
+            <h5 class="card-title">{{car.make}} {{car.model}}</h5>
+            <p class="card-text">{{car.year}}</p>
+            <p>Body Type: {{car.bodyType}}</p>
+            <p>Mileage: {{car.mileage}} Km</p>
+            <a [routerLink]="[car.make, car.id]" class="btn btn-primary float-start view-more-btn">View More</a>
+            <a class="btn btn-primary float-end btn-price">{{car.price.toLocaleString()}} $</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center" *ngIf="shuffledCarsArray.length > itemsPerPage">
-      <nav style="padding-top: 30px">
-        <ul class="pagination">
-          <li class="page-item" [class.disabled]="currentPage == 1">
-            <a class="page-link" href="javascript:void(0)" (click)="currentPage = 1">First</a>
-          </li>
-          <li class="page-item" [class.disabled]="currentPage == 1">
-            <a class="page-link" href="javascript:void(0)" (click)="currentPage = currentPage - 1">Previous</a>
-          </li>
-          <li class="page-item" [class.disabled]="currentPage == totalPages">
-            <a class="page-link" href="javascript:void(0)" (click)="currentPage = currentPage + 1">Next</a>
-          </li>
-          <li class="page-item" [class.disabled]="currentPage == totalPages">
-            <a class="page-link" href="javascript:void(0)" (click)="currentPage = totalPages">Last</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="d-flex justify-content-center" *ngIf="shuffledCarsArray.length > itemsPerPage">
+        <nav style="padding-top: 30px">
+          <ul class="pagination">
+            <li class="page-item" [class.disabled]="currentPage == 1">
+              <a class="page-link" href="javascript:void(0)" (click)="currentPage = 1">First</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage == 1">
+              <a class="page-link" href="javascript:void(0)" (click)="currentPage = currentPage - 1">Previous</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage == totalPages">
+              <a class="page-link" href="javascript:void(0)" (click)="currentPage = currentPage + 1">Next</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage == totalPages">
+              <a class="page-link" href="javascript:void(0)" (click)="currentPage = totalPages">Last</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
+
+
+
 </div>
-
-

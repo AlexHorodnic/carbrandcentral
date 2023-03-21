@@ -9,12 +9,52 @@
   height: 200px;
 }
 .dark-theme {
+  .card-body{
+    background-color: #171717;
+    color: white;
+  }
   background-color: #212121;
   color: #fff;
+  .btn-price{
+    background: linear-gradient(50deg, #3a3a3a, #606060, #3a3a3a); border: 0; cursor: initial
+  }
 }
 .light-theme {
+  .card-body{
+    background-color: #D7E9F7;
+    color: black;
+  }
+  .view-more-btn{
+    background-color: white;
+    color: black;
+  }
+  .btn-price{
+    background: linear-gradient(50deg, #D7E9F7, #ffffff, #D7E9F7);
+    border: 0;
+    cursor: initial;
+    color: black;
+  }
   background-color: #fff;
   color: #333;
+  ul li a{
+    background-color: #D7E9F7;
+    color: black;
+  }
+  .carMakeBtn{
+    background-color: #D7E9F7;
+    color: black;
+  }
+  .filter-btn{
+    background-color: #D7E9F7;
+    color: black;
+    box-shadow: 0 0px 30px -10px #000000;
+    border: none;
+  }
+  #popup{
+    background-color: #D7E9F7;
+    box-shadow: 0 0px 30px -10px #000000;
+    border: none;
+  }
 }
 button.carMakeBtn{
   background-color: #414141;
@@ -26,9 +66,7 @@ button.carMakeBtn{
 }
 .flex-btns {
   flex-wrap: wrap;
-  margin-top: 50px;
   padding-bottom: 30px;
-  padding-top: 30px;
 }
 .car-logo{
   width: 40px;
@@ -37,8 +75,8 @@ button.carMakeBtn{
   padding: 10px;
 }
 .card{
-  background-color: #181818;
-  color: white;
+  background: none;
+  box-shadow: 0 1px 30px -15px #000000;
 }
 ul li a{
   background-color: #414141;
@@ -70,4 +108,36 @@ ul li a{
 }
 .container{
   min-height: calc(100vh - 170px);
+}
+@media (max-width: 991px) {
+  .flex-btns {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .filter-btn{
+    display: none !important;
+  }
+}
+.filter-btn{
+  z-index: 10;
+  background-color: #171717;
+  color: white;
+  width: 80px;
+  height: 50px;
+  position: fixed;
+  top: 70px;
+  right: 0px;
+  border-radius: 8px 0 0 8px;
+  font-size: 25px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+}
+#popup{
+  display:none; z-index: 12; position: fixed; top: 0; left: 0; background-color: #171717; height: 100vh; width: 250px;
+  border-right: 1px solid white;
+}
+body{
+  background-color: red;
 }

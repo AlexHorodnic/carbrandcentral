@@ -16,7 +16,6 @@ input{
   background-color: #282828;
   color: #fff;
 }
-
 .dark-theme {
   background-color: #171717;
   color: #fff;
@@ -28,8 +27,9 @@ input{
   color: white;
 }
 .light-theme {
-  background-color: #fff;
-  color: #333;
+  background-color: #D7E9F7;
+  color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 30px -15px #000000;
 }
 .light-theme .logo-white {
   display: none;

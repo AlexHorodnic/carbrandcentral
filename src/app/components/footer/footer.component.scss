@@ -1,4 +1,12 @@
-
+.dark-theme {
+  background-color: #171717;
+  color: #fff;
+}
+.light-theme {
+  background-color: #D7E9F7;
+  color: #333;
+  box-shadow: 0 1px 30px -15px #000000;
+}
 ul li{
   padding-top: 5px;
   font-size: 15px;
@@ -37,6 +45,15 @@ ul{
   }
 }
 .container{
-  padding: 50px;
+  padding: 25px 0px;
 }
-
+@media (max-width: 360px) {
+  .container-fluid{
+font-size: 15px;
+  }
+}
+@media  (min-width: 768px){
+  .icon-section{
+    margin-top: 10px;
+  }
+}
